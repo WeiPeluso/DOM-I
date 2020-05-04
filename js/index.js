@@ -124,3 +124,10 @@ newLink2.textContent = "new Nav 2"
 
 nav.appendChild(newLink2);
 nav.prepend(newLink1) ;
+
+
+//style
+//change title
+document.title="Great Idea!"
+document.querySelector("h1").innerHTML="Dom<br> is <br> awesome<br>"
+document.querySelector(".contact").firstElementChild.nextElementSibling.innerHTML="123 Way 456 Street<br>Somewhere, USA"

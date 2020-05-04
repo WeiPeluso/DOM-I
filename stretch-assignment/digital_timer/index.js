@@ -15,14 +15,7 @@ let counter=0;
 
 var timer = setInterval(function(){
     counter++;
-
-    /*if(msTensNumber===9){
-        msTensNumber=0;
-        secondOnesNumber=secondOnesNumber+1;
-    }
-    else{*/
-       msTensNumber=msTensNumber+1;
-    //}
+    msTensNumber=msTensNumber+1;
     
     if(counter%10===0){
         msTensNumber=0;
@@ -39,6 +32,7 @@ var timer = setInterval(function(){
         secondOnes.style.color="red";
         msHundres.style.color="red";
         msTens.style.color="red";
+        document.getElementById('colon').style.color="red";
         clearInterval(timer);
     }
 
