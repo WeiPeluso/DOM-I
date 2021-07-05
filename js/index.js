@@ -40,3 +40,94 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//task1
+const headerImg= document.querySelector("#cta-img");
+headerImg.setAttribute('src',siteContent['cta']['img-src']);
+
+const midImg= document.querySelector("#middle-img");
+midImg.setAttribute('src',siteContent['main-content']['middle-img-src']);
+
+
+//task2
+
+//nav
+const navs=document.querySelectorAll('a')
+let keys=Object.keys(siteContent["nav"]);
+navs.forEach((links,index)=>{
+  links.textContent=siteContent["nav"][keys[index]];
+})
+
+
+//cta
+document.querySelector("h1").textContent=siteContent["cta"]["h1"];
+document.querySelector("button").textContent=siteContent["cta"]["button"];
+
+//main-containt
+const mainContentH4=document.querySelectorAll("h4");
+const mainContentText=document.querySelectorAll(".text-content p");
+
+let keysMainH4=[];
+let keysMainText=[]
+for (var key in siteContent["main-content"]) {
+  if(key.includes('h4')){
+    keysMainH4.push(key);
+  }
+  else if(key.includes('content')){
+    keysMainText.push(key);
+  }
+}
+
+mainContentH4.forEach((item,index)=>{
+    
+    item.textContent=siteContent["main-content"][keysMainH4[index]];
+})
+
+mainContentText.forEach((item,index)=>{
+    
+  item.textContent=siteContent["main-content"][keysMainText[index]];
+})
+
+
+//contact
+mainContentH4Arr=Array.from(mainContentH4);
+mainContentH4Arr[mainContentH4Arr.length-1].textContent=siteContent["contact"]["contact-h4"]
+
+const contact=document.querySelectorAll(".contact p");
+console.log(contact);
+
+let keysContact=Object.keys(siteContent["contact"]);
+console.log(keysContact);
+contact.forEach((items,index)=>{
+  items.textContent=siteContent["contact"][keysContact[index+1]];
+})
+
+
+
+//footer
+document.querySelector("footer").textContent=siteContent["footer"]["copyright"]
+
+//task 4
+navs.forEach((links,index)=>{
+  links.style.color="green";
+})
+
+const newLink1 = document.createElement('a');
+const newLink2 = document.createElement('a');
+
+nav=document.querySelector('nav')
+
+newLink1.href = "#"
+newLink1.textContent = "new Nav 1"
+newLink2.href = "#"
+newLink2.textContent = "new Nav 2"
+
+nav.appendChild(newLink2);
+nav.prepend(newLink1) ;
+
+
+//style
+//change title
+document.title="Great Idea!"
+document.querySelector("h1").innerHTML="Dom<br> is <br> awesome<br>"
+document.querySelector(".contact").firstElementChild.nextElementSibling.innerHTML="123 Way 456 Street<br>Somewhere, USA"
